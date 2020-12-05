@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import Image from '../assets/LogInGirl.png'
+import LoginImage from '../assets/LogInGirl.png'
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -16,35 +16,70 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel'
+import Image from "material-ui-image";
 
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		height: '100vh'
-	},
-	image: {
-		backgroundImage: {Image},
-		backgroundRepeat: 'no-repeat',
-		backgroundSize: 'cover',
-		backgroundPosition: 'center'
+        height: '100vh',
 	},
 	paper: {
 		margin: theme.spacing(8, 4),
 		display: 'flex',
 		flexDirection: 'column',
-		alignItems: 'center'
+		alignItems: 'center',
+        fontStyle: 'normal',
 	},
 	avatar: {
 		margin: theme.spacing(1),
-		backgroundColor: theme.palette.secondary.main
+		backgroundColor: '#99B27F'
 	},
 	form: {
 		width: '100%', // Fix IE 11 issue.
-		marginTop: theme.spacing(1)
+        marginTop: theme.spacing(1)
 	},
 	submit: {
-		margin: theme.spacing(3, 0, 2)
-	}
+        margin: theme.spacing(3, 0, 2),
+        color: '#ffffff',
+        background: '#D48883',
+        border: 0,
+        color: 'white',
+        height: 48,
+        borderRadius: '0',
+        boxShadow: '0 0 0 0',
+        "&:hover": {
+            background: '#D48883',
+            boxShadow: '0 0 0 0',
+        }
+    },
+    google: {
+        margin: theme.spacing(3, 0, 2),
+        color: '#ffffff',
+        background: '#de5246 ',
+        border: 0,
+        color: 'white',
+        height: 48,
+        borderRadius: '0',
+        boxShadow: '0 0 0 0',
+        "&:hover": {
+            background: '#de5246 ',
+            boxShadow: '0 0 0 0',
+        }
+    },
+    facebook: {
+        margin: theme.spacing(3, 0, 2),
+        color: '#ffffff',
+        background: '#3b5998',
+        border: 0,
+        color: 'white',
+        height: 48,
+        borderRadius: '0',
+        boxShadow: '0 0 0 0',
+        "&:hover": {
+            background: '#3b5998',
+            boxShadow: '0 0 0 0',
+        }
+    },
 }));
 
 const LoginComponent = ({ login, isAuthenticated }) => {
@@ -60,21 +95,25 @@ const LoginComponent = ({ login, isAuthenticated }) => {
 	return (
 		<Grid container component="main" className={classes.root}>
 			<CssBaseline />
-			<Grid item xs={false} sm={4} md={7} className={classes.image} />
-			<Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-				<div className={classes.paper}>
+			<Grid item xs={3} sm={4} md={7} position="absolute" component={Paper} elevation={0} square>
+            <img 
+                style={{marginLeft:"170px",marginTop:"30px"}}
+                src="https://media.discordapp.net/attachments/784159930029703189/784777971557859358/login.png?width=466&height=618" />
+            </Grid>
+			<Grid item xs={12} sm={8} md={5} component={Paper} elevation={0} square>
+				<div className={classes.paper} style={{width:"350px", marginTop:"130px"}}>
 					<Avatar className={classes.avatar}>
 						<LockOutlinedIcon />
 					</Avatar>
 					<Typography component="h1" variant="h5">
-						Sign in
+						Welcome Back!
 					</Typography>
 					<form className={classes.form} onSubmit={handleSubmit} noValidate>
 						<TextField
-							variant="outlined"
+                            color ="#ffffff"
 							margin="normal"
 							required
-							style = {{width: 350}}
+                            fullWidth
 							id="email"
 							label="Email Address"
 							name="email"
@@ -88,10 +127,9 @@ const LoginComponent = ({ login, isAuthenticated }) => {
 							}}
 						/>
 						<TextField
-							variant="outlined"
 							margin="normal"
 							required
-							style = {{width: 350}}
+                            fullWidth
 							name="password"
 							label="Password"
 							type="password"
@@ -104,45 +142,46 @@ const LoginComponent = ({ login, isAuthenticated }) => {
 								});
 							}}
 						/>
-            <Grid item xs={12}>
-							<center>
-								<FormControl component="fieldset">
-									<FormLabel component="legend">Are you a doctor or patient?</FormLabel>
-									<RadioGroup row aria-label="position" name="position" defaultValue="end">
-										<FormControlLabel
-											value="medic"
-											control={<Radio color="primary" />}
-											label="Doctor"
-											labelPlacement="end"
-											onChange={(e) => {
-												setData({
-													...data,
-													role: e.target.value
-												});
-											}}
-										/>
-										<FormControlLabel
-											value="patient"
-											control={<Radio color="primary" />}
-											label="Patient"
-											labelPlacement="end"
-											onChange={(e) => {
-												setData({
-													...data,
-													role: e.target.value
-												});
-											}}
-										/>
-									</RadioGroup>
-								</FormControl>
-							</center>
-						</Grid>
-						<Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-							Sign In
-						</Button>
+            <Grid container direction={"column"} >
+                <Grid item xs={12} style={{marginBottom:"-30px"}} >
+                            <Button 
+                            type="submit" 
+                            fullWidth 
+                            variant="contained" 
+                            className={classes.submit}>
+                                Sign In
+                            </Button>
+                </Grid>           
+                <Grid item xs={12} style={{marginBottom:"-30px"}}>                
+                            <Button 
+                            type="submit" 
+                            fullWidth 
+                            variant="contained" 
+                            className={classes.google}
+                            style={{
+                                boxShadow: '0 0 0 0',
+                                "&:hover": {
+                                    background: 'blue',
+                                    boxShadow: '0 0 0 0',
+                                }
+                                }}
+                            >
+                                Sign In with Google+
+                            </Button>
+                </Grid>           
+                <Grid item xs={12}>   
+                            <Button 
+                            type="submit" 
+                            fullWidth 
+                            variant="contained"
+                            className={classes.facebook}>
+                                Sign In with Facebook
+                            </Button>
+                </Grid>
+            </Grid>
 						<Grid container>
-							<Grid item>
-								<Link href="/signup" variant="body2">
+							<Grid item xs={12} >
+								<Link href="/signup" variant="body2" style={{color: "black",fontStyle:"normal"}}>
 									{"Don't have an account? Sign Up"}
 								</Link>
 							</Grid>
