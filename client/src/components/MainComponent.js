@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './LoginComponent';
+import Signup from './SignupComponent';
+
 
 function Main({ isAuthenticated, user }) {
 	return (
@@ -16,6 +18,7 @@ const Routes = () => {
 		<Switch>
 			{/* new component pages to be added here */}
 			<Route path="/login" component={Login} />
+			<Route path="/signup" component={Signup} />
 		</Switch>
 	);
 };

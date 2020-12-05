@@ -15,8 +15,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel'
-import Image from "material-ui-image";
+import FormLabel from '@material-ui/core/FormLabel';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -101,7 +100,7 @@ const LoginComponent = ({ login, isAuthenticated }) => {
                 src="https://media.discordapp.net/attachments/784159930029703189/784777971557859358/login.png?width=466&height=618" />
             </Grid>
 			<Grid item xs={12} sm={8} md={5} component={Paper} elevation={0} square>
-				<div className={classes.paper} style={{width:"350px", marginTop:"130px"}}>
+				<div className={classes.paper} style={{width:"350px", marginTop:"100px"}}>
 					<Avatar className={classes.avatar}>
 						<LockOutlinedIcon />
 					</Avatar>
@@ -142,46 +141,45 @@ const LoginComponent = ({ login, isAuthenticated }) => {
 								});
 							}}
 						/>
-            <Grid container direction={"column"} >
-                <Grid item xs={12} style={{marginBottom:"-30px"}} >
-                            <Button 
-                            type="submit" 
-                            fullWidth 
-                            variant="contained" 
-                            className={classes.submit}>
-                                Sign In
-                            </Button>
-                </Grid>           
-                <Grid item xs={12} style={{marginBottom:"-30px"}}>                
-                            <Button 
-                            type="submit" 
-                            fullWidth 
-                            variant="contained" 
-                            className={classes.google}
-                            style={{
-                                boxShadow: '0 0 0 0',
-                                "&:hover": {
-                                    background: 'blue',
+                        <Grid container direction={"column"} >
+                            <Grid item xs={12} style={{marginBottom:"-30px"}} >
+                                <Button 
+                                type="submit" 
+                                fullWidth 
+                                variant="contained" 
+                                className={classes.submit}>
+                                    Sign In
+                                </Button>
+                            </Grid>           
+                            <Grid item xs={12} style={{marginBottom:"-30px"}}>                
+                                <Button 
+                                type="submit" 
+                                fullWidth 
+                                variant="contained" 
+                                className={classes.google}
+                                style={{
                                     boxShadow: '0 0 0 0',
-                                }
-                                }}
-                            >
-                                Sign In with Google+
-                            </Button>
-                </Grid>           
-                <Grid item xs={12}>   
-                            <Button 
-                            type="submit" 
-                            fullWidth 
-                            variant="contained"
-                            className={classes.facebook}>
-                                Sign In with Facebook
-                            </Button>
-                </Grid>
-            </Grid>
+                                    "&:hover": {
+                                        background: 'blue',
+                                        boxShadow: '0 0 0 0',
+                                    }
+                                    }}>
+                                    Sign In with Google+
+                                </Button>
+                            </Grid>           
+                            <Grid item xs={12}>   
+                                <Button 
+                                type="submit" 
+                                fullWidth 
+                                variant="contained"
+                                className={classes.facebook}>
+                                    Sign In with Facebook
+                                </Button>
+                            </Grid>
+                        </Grid>
 						<Grid container>
 							<Grid item xs={12} >
-								<Link href="/signup" variant="body2" style={{color: "black",fontStyle:"normal"}}>
+                                <Link href="/signup" variant="body2" style={{color: "black",textDecoration:"underlined"}}>
 									{"Don't have an account? Sign Up"}
 								</Link>
 							</Grid>
