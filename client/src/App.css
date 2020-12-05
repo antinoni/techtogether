@@ -13,16 +13,7 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
 .App-link {
   color: #61dafb;
@@ -37,32 +28,18 @@
   }
 }
 
-/*----NavBar-----*/
-
-.top-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background-color: #d48883;
-}
-
-.nav-links {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-}
 
 /*-----Footer-----*/
 
 .site-footer {
+  width: 100vw;
   font-family: 'Calibri', sans-serif;
   font-size: 14px;
   color: #202020; 
   padding: 20px;
   background-color: #EEEDBE;
+  bottom:0;
+  position:fixed;
 }
 
   .site-footer a {
@@ -77,4 +54,8 @@
   padding-top: 40px;
   padding-bottom: 40px; }
 
+<<<<<<< HEAD
   
+=======
+  
+>>>>>>> master
