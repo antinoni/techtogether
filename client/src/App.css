@@ -37,6 +37,9 @@
   }
 }
 
+
+/*-----NavBar-----*/
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -52,3 +55,25 @@ nav {
   align-items: center;
   list-style: none;
 }
+
+/*-----Footer-----*/
+
+.site-footer {
+  font-family: 'Calibri', sans-serif;
+  font-size: 14px;
+  color: #202020; 
+  padding: 20px;
+  background-color: #EEEDBE;
+}
+
+  .site-footer a {
+    color: #202020;
+    text-decoration: none; }
+
+    .site-footer a:hover, .site-footer a:active {
+      color: #768696; }
+
+.site-footer-inner {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px; }
