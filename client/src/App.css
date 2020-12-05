@@ -52,3 +52,16 @@
   align-items: center;
   list-style: none;
 }
+
+.nav-pro {
+  text-align: left;
+}
+
+.nav-list {
+  background-color: #fcf7db;
+  height: 95vh;
+}
+
+.grid-right {
+  margin: 10px;
+}
