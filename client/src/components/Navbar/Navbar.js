@@ -14,7 +14,7 @@ class Navbar extends Component {
         return(
             <nav className="NavbarItems">
                 <h1 className="navbar-logo"><i className="fab site-logo"><img src="https://cdn.discordapp.com/attachments/784159525657378829/784740718324219904/helpmehelpyou-01.png" height="80px;" top="5px;"/></i></h1>
-                <div className="menu-Icon" onClick={this.handleClick}>
+                <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>

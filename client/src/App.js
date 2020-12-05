@@ -2,14 +2,14 @@ import react from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./components/MainComponent";
-import Nav from "./components/NavComponent";
+import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/ProfileComponent";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Navbar />
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/profile" exact component={Profile} />
