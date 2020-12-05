@@ -37,14 +37,9 @@
   }
 }
 
-<<<<<<< HEAD
+/*----NavBar-----*/
 
-/*-----NavBar-----*/
-
-nav {
-=======
 .top-nav {
->>>>>>> 2808f6fb135008f3e55d37c5cdb77307b2041cc7
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -81,3 +76,5 @@ nav {
   position: relative;
   padding-top: 40px;
   padding-bottom: 40px; }
+
+  
