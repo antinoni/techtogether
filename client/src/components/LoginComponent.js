@@ -86,8 +86,8 @@ const LoginComponent = ({ login, isAuthenticated }) => {
 	function handleSubmit(e) {
 		e.preventDefault();
 
-    const { role, email, password } = data;
-    login(role, email, password);
+    const { email, password } = data;
+    login(email, password);
 	}
 
 	return (

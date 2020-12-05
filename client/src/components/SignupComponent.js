@@ -56,10 +56,10 @@ const SignupComponent = ({ register, isAuthenticated }) => {
 	const [ data, setData ] = useState(null);
 
 	const handleSubmit = async e => {
-    const {role, email, password, firstName, lastName, phoneNumber} = data;
+    const {email, password, firstName, lastName, repeatpassword} = data;
     e.preventDefault();
-    register({role, email, password, firstName, lastName, phoneNumber});
-    console.log(`created account ${role} - ${email}`);
+    register({ email, password, firstName, lastName, repeatpassword});
+    console.log(`created account  ${email}`);
   }
  
 
@@ -153,8 +153,8 @@ const SignupComponent = ({ register, isAuthenticated }) => {
                                     fullWidth
                                     id="repeatpassword"
                                     label="Repeat Password"
-                                    name="password"
-                                    autoComplete="password"
+                                    name="repeatpassword"
+                                    autoComplete="repeatpassword"
                                     onChange={(e) => {
                                         setData({
                                             ...data,
@@ -169,7 +169,7 @@ const SignupComponent = ({ register, isAuthenticated }) => {
                         </Button>
                         <Grid align="center">
                             <Grid item xs={12} >
-                                <Link href="#" variant="body2" style={{color: "black",textDecoration:"underlined"}}>
+                                <Link href="/login" variant="body2" style={{color: "black",textDecoration:"underlined"}}>
                                     Already have an account? Sign in
                                 </Link>
                             </Grid>
