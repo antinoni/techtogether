@@ -6,7 +6,7 @@ import Nav from "./components/NavComponent";
 import Profile from "./components/ProfileComponent";
 
 import withFirebaseAuth from 'react-with-firebase-auth'
-import * as firebase from 'firebase/app';
+import firebase from 'firebase';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
 
