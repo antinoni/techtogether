@@ -20,10 +20,24 @@ import Select from '@material-ui/core/Select';
 const useStyles = makeStyles((theme) => ({
 	root: {
         height: '100vh',
+        height:"70vh",
+        marginLeft:"20%",
+        marginTop:"5%",
+        backgroundColor:"#DDC18C", 
+        width:"60%"
     },
     formControl: {
         minWidth: 200,
         paddingLeft: -10
+    },
+    icon: {
+        color:"#C8564E",
+        position:"absolute",
+        display: 'flex',
+        alignItems: 'center',
+        marginTop: '-1.5%',
+        marginLeft:"28%",
+        fontSize: "50px"
     }
 }));
 
@@ -35,55 +49,61 @@ const Newpost = ({ isAuthenticated }) => {
 
     return (
         <Grid container component="main" className={classes.root}>
-            <Grid item xs={12}>
-                <div className="panel-body">
-                   Post a new help request
-                </div>
-            </Grid>
-            <Grid item xs={10} sm={6} spacing={5}>
-                <TextField
-                    variant="outlined"
-                    autoComplete="title"
-                    name="title"
-                    required
-                    fullWidth
-                    id="title"
-                    label=""
-                    placeholder="Title"
-                />
-            </Grid>
-            <Grid item xs={10} sm={6} spacing={5}>
-                <FormControl required className={classes.formControl}>
-                    <InputLabel>&nbsp;&nbsp;&nbsp;&nbsp;Tag</InputLabel>
-                    <Select
-                    variant="outlined"
-                    onChange={handleChange}                    
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={1}>Health</MenuItem>
-                    <MenuItem value={2}>Supplies</MenuItem>
-                    <MenuItem value={3}>Services</MenuItem>
-                    <MenuItem value={4}>Elderly Care</MenuItem>
-                    <MenuItem value={5}>Child Care</MenuItem>
-                    <MenuItem value={6}>Personal Care</MenuItem>
-                    <MenuItem value={7}>Other</MenuItem>
-                    </Select>
-                </FormControl>
-            </Grid>
-            <Grid item xs={12} md={8}>
-                <div className="panel-body">
-                    <TextField
-                        id="outlined-multiline-static"
-                        label=""
-                        fullWidth
-                        multiline
-                        rows={4}
-                        placeholder="Explain your request here. Remember, never reveal any personal information you don't want strangers to have!"
-                        variant="outlined"
-                    />
-                </div>
+            <center><LensIcon className={classes.icon} /></center>
+            <Grid cointainer>
+                <Grid item style={{marginLeft:"170px",marginTop:"25px",fontSize:"30px", fontWeight:"bold",color:"white"}}>
+                    <center>Post a new help request</center>
+                </Grid>
+                <Grid container style={{backgroundColor:"white", padding:"20px",marginLeft:"85px",marginTop: "10px"}}>
+                    <Grid container spacing={1}>
+                        <Grid item xs={7} style={{borderRadius:"4px"}}>
+                            <TextField
+                                variant="outlined"
+                                autoComplete="title"
+                                name="title"
+                                required
+                                fullWidth
+                                id="title"
+                                placeholder="Title"
+                                style={{backgroundColor:"#fafafa"}}
+                            />
+                        </Grid>
+                        <Grid item style={{borderRadius:"4px"}}>
+                            <FormControl required className={classes.formControl}>
+                                <InputLabel>Tag</InputLabel>
+                                <Select
+                                variant="outlined"
+                                name="tag"
+                                required
+                                id="tag"
+                                onChange={handleChange}  
+                                style={{backgroundColor:"#fafafa"}}                  
+                                >
+                                <MenuItem value="">
+                                    <em>None</em>   
+                                </MenuItem>
+                                <MenuItem value={1}>Health</MenuItem>
+                                <MenuItem value={2}>Supplies</MenuItem>
+                                <MenuItem value={3}>Services</MenuItem>
+                                <MenuItem value={4}>Elderly Care</MenuItem>
+                                <MenuItem value={5}>Child Care</MenuItem>
+                                <MenuItem value={6}>Personal Care</MenuItem>
+                                <MenuItem value={7}>Other</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={11} style={{borderRadius:"4px",backgroundColor:"#fafafa",marginTop:"20px"}}>
+                            <TextField
+                                id="outlined-multiline-static"
+                                fullWidth
+                                multiline
+                                rows={15}
+                                placeholder="Explain your request here. Remember, never reveal any personal information you don't want strangers to have!"
+                                variant="outlined"
+                            />
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     );
