@@ -4,6 +4,7 @@ import Login from "./LoginComponent";
 import Signup from "./SignupComponent";
 import Profile from "./ProfileComponent";
 import NewPost from "./NewPostComponent";
+import Board from "./BoardComponent";
 import ProfileSettings from "./ProfileSettingsComponent";
 
 function Main({ isAuthenticated, user }) {
@@ -24,6 +25,7 @@ const Routes = () => {
       <Route path="/profile" component={Profile} />
       <Route path="/newpost" component={NewPost} />
       <Route path="/profilesettings" component={ProfileSettings} />
+    	<Route path="/board" component={Board} />
     </Switch>
   );
 };

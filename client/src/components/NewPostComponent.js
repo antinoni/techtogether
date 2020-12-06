@@ -16,7 +16,6 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-
 const useStyles = makeStyles((theme) => ({
 	root: {
         height: '100vh',
@@ -82,13 +81,13 @@ const Newpost = ({ isAuthenticated }) => {
                                 <MenuItem value="">
                                     <em>None</em>   
                                 </MenuItem>
-                                <MenuItem value={1}>Health</MenuItem>
-                                <MenuItem value={2}>Supplies</MenuItem>
-                                <MenuItem value={3}>Services</MenuItem>
-                                <MenuItem value={4}>Elderly Care</MenuItem>
-                                <MenuItem value={5}>Child Care</MenuItem>
-                                <MenuItem value={6}>Personal Care</MenuItem>
-                                <MenuItem value={7}>Other</MenuItem>
+                                <MenuItem value="health">Health</MenuItem>
+                                <MenuItem value="supplies">Supplies</MenuItem>
+                                <MenuItem value="services">Services</MenuItem>
+                                <MenuItem value="elderly">Elderly Care</MenuItem>
+                                <MenuItem value="childcare">Child Care</MenuItem>
+                                <MenuItem value="personalcare">Personal Care</MenuItem>
+                                <MenuItem value="other">Other</MenuItem>
                                 </Select>
                             </FormControl>
                         </Grid>
