@@ -104,7 +104,7 @@ export default function ProfileSettings() {
             </List>
           </Grid>
           <Grid className="grid-right" container sm={5}>
-            <Grid style={{ margin: "10px" }} item xs={12}>
+            <Grid style={{ margin: "px" }} item xs={12}>
               <h1> Change Profile Information</h1>
               <FormControl style={{ margin: "10px" }} variant="filled">
                 <InputLabel htmlFor="component-filled">First Name</InputLabel>
@@ -178,7 +178,12 @@ export default function ProfileSettings() {
                 />
               </FormControl>
             </Grid>
-            <Grid style={{ margin: "10px" }} item xs={12}>
+          </Grid>
+          <Grid container spacing={6} direction={"row"}>
+            <Grid item xs={3} sm={3}>
+              <h1>Log Out</h1>
+            </Grid>
+            <Grid style={{ margin: "10px" }} xs={3} sm={5}>
               <Button
                 size="large"
                 type="submit"
@@ -189,14 +194,6 @@ export default function ProfileSettings() {
                 SUBMIT
               </Button>{" "}
             </Grid>
-          </Grid>
-        </Grid>
-        <Grid container spacing={3} direction={"row"}>
-          <Grid item xs={3} sm={3}>
-            <h1>Log Out</h1>
-          </Grid>
-          <Grid style={{ margin: "20px" }} item xs={12} sm={6}>
-            <p>Edit Profile Information</p>
           </Grid>
         </Grid>
       </div>

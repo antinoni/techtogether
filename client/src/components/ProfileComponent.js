@@ -14,6 +14,8 @@ import profilePic from "../assets/profilePic.png";
 import FormControl from "@material-ui/core/FormControl";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
+// import ProfileSettings from "./ProfileSettingsComponent";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {

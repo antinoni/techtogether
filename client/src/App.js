@@ -1,12 +1,12 @@
 import react from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Main from "./components/MainComponent";
 
-import withFirebaseAuth from 'react-with-firebase-auth'
-import firebase from 'firebase';
-import 'firebase/auth';
-import firebaseConfig from './firebaseConfig';
+import withFirebaseAuth from "react-with-firebase-auth";
+import firebase from "firebase";
+import "firebase/auth";
+import firebaseConfig from "./firebaseConfig";
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
