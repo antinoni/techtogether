@@ -17,42 +17,44 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { ArrowDropDown, ArrowDropDownCircleOutlined, RadioButtonCheckedOutlined } from '@material-ui/icons';
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-        height: '100vh',
-	},
-	paper: {
-		marginTop: theme.spacing(8, 4),
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center'
-	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: '#99B27F'
-	},
-	form: {
-		width: '100%',
-		marginTop: theme.spacing(3)
-	},
-	submit: {
-        margin: theme.spacing(3, 0, 2),
-        color: '#ffffff',
-        background: '#D48883',
-        border: 0,
-        color: 'white',
-        height: 48,
-        borderRadius: '0',
-        boxShadow: '0 0 0 0',
-        "&:hover": {
-            background: '#D48883',
-            boxShadow: '0 0 0 0',
-        }
-	}
-}));
 
 export default function SignupComponent ({ register, isAuthenticated }) {
-	const classes = useStyles();
+    
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            height: '100vh',
+        },
+        paper: {
+            marginTop: theme.spacing(8, 4),
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        },
+        avatar: {
+            margin: theme.spacing(1),
+            backgroundColor: '#99B27F'
+        },
+        form: {
+            width: '100%',
+            marginTop: theme.spacing(3)
+        },
+        submit: {
+            margin: theme.spacing(3, 0, 2),
+            color: '#ffffff',
+            background: '#D48883',
+            border: 0,
+            color: 'white',
+            height: 48,
+            borderRadius: '0',
+            boxShadow: '0 0 0 0',
+            "&:hover": {
+                background: '#D48883',
+                boxShadow: '0 0 0 0',
+            }
+        }
+    }));
+    
+    const classes = useStyles();
  
 
 	return (
