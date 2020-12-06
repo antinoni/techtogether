@@ -17,8 +17,8 @@ import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
 export default function Profile() {
-  const [firstname, setFirstName] = React.useState("Composed TextField");
-  const [lastname, setLastName] = React.useState("Composed TextField");
+  const [firstname, setFirstName] = React.useState("FirstName");
+  const [lastname, setLastName] = React.useState("LastName");
   const [email, setEmail] = React.useState("Composed TextField");
   const [number, setNumber] = React.useState("Composed TextField");
   const [address, setAddress] = React.useState("Composed TextField");
@@ -73,10 +73,8 @@ export default function Profile() {
                 <Divider light />
               </Link>
             </List>
-            <Grid item xs={3} sm={3}>
-            <Link to="/login">
-              <h1>Log Out</h1>
-            </Link>
+            <Grid item xs={3} sm={3} style={{color:"black",marginLeft:'125px',marginTop:'250px'}}>
+              <a href="/login" style={{color:'black',textDecoration:'none'}}><h3>Log Out</h3></a>
             </Grid>
           </Grid>
           <Grid className="grid-right" container sm={5}>
@@ -88,7 +86,7 @@ export default function Profile() {
               />
             </Grid>
             <Grid item style={{textAlign:'Left',marginLeft:'20px',marginTop:'50px'}}>
-              <h1>FirstName LastName</h1>
+              <h1>{firstname} {lastname}</h1>
               <p><i>@username</i></p>
               <p><i>General area, Country</i></p>
             </Grid>
@@ -98,6 +96,7 @@ export default function Profile() {
                 <Input
                   id="component-disabled"
                   value={firstname}
+                  placeholder={firstname}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -105,6 +104,7 @@ export default function Profile() {
                 <InputLabel htmlFor="component-disabled">Email</InputLabel>
                 <Input
                   id="component-disabled"
+                  placeholder={email}
                   value={email}
                   onChange={handleChange}
                 />
@@ -113,6 +113,7 @@ export default function Profile() {
                 <InputLabel htmlFor="component-disabled">Address</InputLabel>
                 <Input
                   id="component-disabled"
+                  placeholder={address}
                   value={address}
                   onChange={handleChange}
                 />
@@ -123,6 +124,7 @@ export default function Profile() {
                 <InputLabel htmlFor="component-disabled">Last Name</InputLabel>
                 <Input
                   id="component-disabled"
+                  placeholder={lastname}
                   value={lastname}
                   onChange={handleChange}
                 />
@@ -133,6 +135,7 @@ export default function Profile() {
                 </InputLabel>
                 <Input
                   id="component-disabled"
+                  placeholder={number}
                   value={number}
                   onChange={handleChange}
                 />
@@ -141,14 +144,15 @@ export default function Profile() {
                 <InputLabel htmlFor="component-disabled">Country</InputLabel>
                 <Input
                   id="component-disabled"
+                  placeholder={country}
                   value={country}
                   onChange={handleChange}
                 />
               </FormControl>
             </Grid>
             <Grid container spacing={3} direction={"row"}>
-              <Grid style={{ margin: "20px" }} item xs={12} sm={6}>
-                <Button>
+              <Grid style={{ marginLeft: "120px" }} item xs={12} sm={6}>
+                <Button component={Link} to="/profilesettings" >
                   <p>Edit Profile Information</p>
                 </Button>
               </Grid>

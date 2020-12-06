@@ -18,14 +18,10 @@ export default function ProfileArchive() {
     <div>
       <div className="nav-pro">
         <Grid container spacing={3} direction={"row"}>
-          <Grid className="nav-list" item xs={3} sm={3}>
+        <Grid className="nav-list" item xs={3} sm={3} style={{marginTop:'12px',backgroundColor:'#FCF7DB'}}>
             <h1 style={{ marginLeft: "30px" }}>User Profile</h1>
-            <List component="nav">
-              <Link to="/profile" 
-                style={{
-                textDecoration: "none",
-                color: "black",
-              }}>
+            <List component="nav" aria-label="mailbox folders">
+              <Link to="/profile" style={{textDecoration: "none",color: "black"}}>
                 <ListItem button>
                   <ListItemAvatar>
                     <Avatar style={{backgroundColor: "#99B27F"}}>
@@ -36,21 +32,17 @@ export default function ProfileArchive() {
                 </ListItem>
               </Link>
               <Divider />
-              <Link to="/profilesettings" style={{backgroundColor: "#99B27F"}}>
+              <Link to="/profilesettings" style={{textDecoration: "none",color: "black"}}>
                 <ListItem button divider>
                   <ListItemAvatar>
-                    <Avatar  style={{backgroundColor: "#99B27F"}}>
+                    <Avatar style={{backgroundColor: "#99B27F"}}>
                       <SettingsOutlinedIcon />
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText primary="Settings" />
                 </ListItem>
               </Link>
-              <Link to="/profilearchive"
-              style={{
-                textDecoration: "none",
-                color: "black",
-              }}>
+              <Link to="/profilearchive" style={{textDecoration: "none",color: "black"}}>
                 <ListItem button>
                   <ListItemAvatar>
                     <Avatar style={{backgroundColor: "#99B27F"}}>
@@ -62,23 +54,19 @@ export default function ProfileArchive() {
                 <Divider light />
               </Link>
             </List>
+            <Grid item xs={3} sm={3} style={{color:"black",marginLeft:'125px',marginTop:'270px'}}>
+              <a href="/login" style={{color:'black',textDecoration:'none'}}><h3>Log Out</h3></a>
+            </Grid>
           </Grid>
           <Grid className="grid-right" container sm={5}>
             <Grid style={{ margin: "10px" }} item xs={12}>
               <h1> Past Posts</h1>
             </Grid>
-            <Grid style={{ margin: "10px" }} item xs={12}>
+            <Grid style={{ marginTop: "-250px" }} item xs={12}>
               <h3> Title of Post</h3>
               <p> Details</p>
               <p> Helped By: User123</p>
               <p>Date: 12/05/20</p>
-            </Grid>
-          </Grid>
-          <Grid container spacing={6} direction={"row"}>
-            <Grid item xs={3} sm={3}>
-              <Link to="/login">
-                <h1>Log Out</h1>
-              </Link>
             </Grid>
           </Grid>
         </Grid>
