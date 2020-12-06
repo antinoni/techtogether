@@ -16,6 +16,9 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
+import { db } from "../App";
+
+
 const useStyles = makeStyles((theme) => ({
 	root: {
         height: '100vh',
@@ -40,7 +43,28 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+
 const Newpost = ({ isAuthenticated }) => {
+
+	// have to also include UserID when signin and login feature is implemented
+	// board is the value from MenuItem (I changed the values below)
+		const addPostToDatabase = (title, detail, board) => {
+			db.collection('Boards')
+				.where('boardname', '==', board)
+				.get()
+				.then(query => {
+					db.collection('Boards')
+						.doc(query.docs[0].id)
+						.collection('posts')
+						.add({
+							posttitle: title,
+							postdetails: detail,
+							created: db.FieldValue.serverTimestamp()
+							//createdBy: userId
+						})
+				});
+		};
+
     const classes = useStyles();
     const [value, setValue] = useState("");
 
