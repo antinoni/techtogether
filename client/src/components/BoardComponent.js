@@ -5,6 +5,7 @@ import elderlyPic from "../assets/elderlyboard.png";
 import momPic from "../assets/singlemom.png";
 import tab1 from "../assets/tab1.png";
 import tab2 from "../assets/tab2.png";
+import { Link } from "react-router-dom";
 
 import Grid from "@material-ui/core/Grid";
 
@@ -36,10 +37,14 @@ class Board extends React.Component {
             <h1>JOIN A GROUP</h1>
           </Grid>
           <Grid item xs={6} sm={6}>
-            <img className="tab" src={tab1} alt="elderly picture" />
+            <Link to="/post">
+              <img className="tab" src={tab1} alt="elderly picture" />
+            </Link>
           </Grid>
           <Grid item xs={6} sm={6}>
-            <img className="tab" src={tab2} alt="single mom picture" />
+            <Link to="/post">
+              <img className="tab" src={tab2} alt="single mom picture" />
+            </Link>
           </Grid>
         </Grid>
         {boardarray.map((board) => (
