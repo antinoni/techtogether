@@ -53,14 +53,6 @@ const useStyles = makeStyles((theme) => ({
 
 const SignupComponent = ({ register, isAuthenticated }) => {
 	const classes = useStyles();
-	const [ data, setData ] = useState(null);
-
-	const handleSubmit = async e => {
-    const {email, password, firstName, lastName, repeatpassword} = data;
-    e.preventDefault();
-    register({ email, password, firstName, lastName, repeatpassword});
-    console.log(`created account  ${email}`);
-  }
  
 
 	return (
@@ -79,7 +71,7 @@ const SignupComponent = ({ register, isAuthenticated }) => {
                     <Typography component="h1" variant="h5">
                         Create an account
                     </Typography>
-                    <form className={classes.form} noValidate onSubmit={handleSubmit}>
+                    <form className={classes.form} noValidate>
                         <Grid container spacing={2}>
                             <Grid item sm={6}>
                                 <TextField
@@ -90,12 +82,6 @@ const SignupComponent = ({ register, isAuthenticated }) => {
                                     id="firstName"
                                     label="First Name"
                                     autoFocus
-                                    onChange={(e) => {
-                                        setData({
-                                            ...data,
-                                            firstName: e.target.value
-                                        });
-                                    }}
                                 />
                             </Grid>
                             <Grid item sm={6}>
@@ -106,12 +92,6 @@ const SignupComponent = ({ register, isAuthenticated }) => {
                                     label="Last Name"
                                     name="lastName"
                                     autoComplete="lname"
-                                    onChange={(e) => {
-                                        setData({
-                                            ...data,
-                                            lastName: e.target.value
-                                        });
-                                    }}
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -122,12 +102,6 @@ const SignupComponent = ({ register, isAuthenticated }) => {
                                     label="Email Address"
                                     name="email"
                                     autoComplete="email"
-                                    onChange={(e) => {
-                                        setData({
-                                            ...data,
-                                            email: e.target.value
-                                        });
-                                    }}
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -139,12 +113,6 @@ const SignupComponent = ({ register, isAuthenticated }) => {
                                     type="password"
                                     id="password"
                                     autoComplete="current-password"
-                                    onChange={(e) => {
-                                        setData({
-                                            ...data,
-                                            password: e.target.value
-                                        });
-                                    }}
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -155,12 +123,6 @@ const SignupComponent = ({ register, isAuthenticated }) => {
                                     label="Repeat Password"
                                     name="repeatpassword"
                                     autoComplete="repeatpassword"
-                                    onChange={(e) => {
-                                        setData({
-                                            ...data,
-                                            repeatpassword: e.target.value
-                                        });
-                                    }}
                                 />
                             </Grid>
                         </Grid>
