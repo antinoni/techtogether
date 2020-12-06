@@ -11,70 +11,70 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-        height: '100vh',
-	},
-	paper: {
-		margin: theme.spacing(8, 4),
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: '#99B27F'
-	},
-	form: {
-		width: '100%', // Fix IE 11 issue.
-        marginTop: theme.spacing(1)
-	},
-	submit: {
-        margin: theme.spacing(3, 0, 2),
-        color: '#ffffff',
-        background: '#D48883',
-        border: 0,
-        color: 'white',
-        height: 48,
-        borderRadius: '0',
-        boxShadow: '0 0 0 0',
-        "&:hover": {
-            background: '#D48883',
-            boxShadow: '0 0 0 0',
-        }
-    },
-    google: {
-        margin: theme.spacing(3, 0, 2),
-        color: '#ffffff',
-        background: '#de5246 ',
-        border: 0,
-        color: 'white',
-        height: 48,
-        borderRadius: '0',
-        boxShadow: '0 0 0 0',
-        "&:hover": {
-            background: '#de5246 ',
-            boxShadow: '0 0 0 0',
-        }
-    },
-    facebook: {
-        margin: theme.spacing(3, 0, 2),
-        color: '#ffffff',
-        background: '#3b5998',
-        border: 0,
-        color: 'white',
-        height: 48,
-        borderRadius: '0',
-        boxShadow: '0 0 0 0',
-        "&:hover": {
-            background: '#3b5998',
-            boxShadow: '0 0 0 0',
-        }
-    },
-}));
-
 export default function LoginComponent({ login, isAuthenticated }) {
-	const classes = useStyles();
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            height: '100vh',
+        },
+        paper: {
+            margin: theme.spacing(8, 4),
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+        },
+        avatar: {
+            margin: theme.spacing(1),
+            backgroundColor: '#99B27F'
+        },
+        form: {
+            width: '100%', // Fix IE 11 issue.
+            marginTop: theme.spacing(1)
+        },
+        submit: {
+            margin: theme.spacing(3, 0, 2),
+            color: '#ffffff',
+            background: '#D48883',
+            border: 0,
+            color: 'white',
+            height: 48,
+            borderRadius: '0',
+            boxShadow: '0 0 0 0',
+            "&:hover": {
+                background: '#D48883',
+                boxShadow: '0 0 0 0',
+            }
+        },
+        google: {
+            margin: theme.spacing(3, 0, 2),
+            color: '#ffffff',
+            background: '#de5246 ',
+            border: 0,
+            color: 'white',
+            height: 48,
+            borderRadius: '0',
+            boxShadow: '0 0 0 0',
+            "&:hover": {
+                background: '#de5246 ',
+                boxShadow: '0 0 0 0',
+            }
+        },
+        facebook: {
+            margin: theme.spacing(3, 0, 2),
+            color: '#ffffff',
+            background: '#3b5998',
+            border: 0,
+            color: 'white',
+            height: 48,
+            borderRadius: '0',
+            boxShadow: '0 0 0 0',
+            "&:hover": {
+                background: '#3b5998',
+                boxShadow: '0 0 0 0',
+            }
+        },
+    }));
+    
+    const classes = useStyles();
 
 	return (
 		<Grid container component="main" className={classes.root}>

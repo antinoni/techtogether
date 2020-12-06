@@ -8,6 +8,7 @@ import Board from "./BoardComponent";
 import Post from "./PostComponent";
 import ProfileSettings from "./ProfileSettingsComponent";
 import ProfileArchive from "./ProfileArchiveComponent";
+import Home from "./HomeComponent";
 
 function Main({ isAuthenticated, user }) {
   return (
@@ -29,7 +30,8 @@ const Routes = () => {
       <Route path="/profilearchive" component={ProfileArchive} />
       <Route path="/profilesettings" component={ProfileSettings} />
       <Route path="/board" component={Board} />
-      <Route path="/post" component={Post} />
+			<Route path="/post" component={Post} />
+      <Route exact path="/" component={Home} />
     </Switch>
   );
 };

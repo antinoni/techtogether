@@ -12,46 +12,49 @@ import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import RestoreIcon from "@material-ui/icons/Restore";
 import Grid from "@material-ui/core/Grid";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: "100vh",
-  },
-
-  paper: {
-    marginTop: theme.spacing(8, 4),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: "#99B27F",
-  },
-  form: {
-    width: "100%",
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-    color: "#ffffff",
-    background: "#D48883",
-    border: 0,
-    color: "white",
-    height: 48,
-    borderRadius: "0",
-    boxShadow: "0 0 0 0",
-    "&:hover": {
-      background: "#D48883",
-      boxShadow: "0 0 0 0",
-    },
-  },
-  linkstyle: {
-    textDecoration: "none",
-    color: "black",
-  },
-}));
 
 export default function ProfileArchive() {
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      height: "100vh",
+    },
+  
+    paper: {
+      marginTop: theme.spacing(8, 4),
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    avatar: {
+      margin: theme.spacing(1),
+      backgroundColor: "#99B27F",
+    },
+    form: {
+      width: "100%",
+      marginTop: theme.spacing(3),
+    },
+    submit: {
+      margin: theme.spacing(3, 0, 2),
+      color: "#ffffff",
+      background: "#D48883",
+      border: 0,
+      color: "white",
+      height: 48,
+      borderRadius: "0",
+      boxShadow: "0 0 0 0",
+      "&:hover": {
+        background: "#D48883",
+        boxShadow: "0 0 0 0",
+      },
+    },
+    linkstyle: {
+      textDecoration: "none",
+      color: "black",
+    },
+  }));
+  
+
   const classes = useStyles();
   return (
     <div>

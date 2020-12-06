@@ -12,47 +12,47 @@ import Select from '@material-ui/core/Select';
 
 import { db } from "../App";
 
-
 const useStyles = makeStyles((theme) => ({
-	root: {
-        height: '100vh',
-        height:"65vh",
-        marginLeft:"20%",
-        marginTop:"5%",
-        backgroundColor:"#DDC18C", 
-        width:"60%",
-        marginBottom: '5%'
-    },
-    formControl: {
-        minWidth: 200,
-        paddingLeft: -10
-    },
-    icon: {
-        color:"#C8564E",
-        position:"absolute",
-        display: 'flex',
-        alignItems: 'center',
-        marginTop: '-1.5%',
-        marginLeft:"28.5%",
-        fontSize: "50px"
-    },
-    submit: {
-        color: '#ffffff',
-        fontWeight: 'bold',
-        background:'#99B27F',
-        padding: '10px 30px 10px 30px',
-        marginLeft:"20%",
-        marginTop:"1.5%",
-        borderRadius: '0',
-        "&:hover": {
-            background: '#99B27F',
-        }
-    }
+		root: {
+				height: '100vh',
+				height:"65vh",
+				marginLeft:"20%",
+				marginTop:"5%",
+				backgroundColor:"#DDC18C", 
+				width:"60%",
+				marginBottom: '5%'
+		},
+		formControl: {
+				minWidth: 200,
+				paddingLeft: -10
+		},
+		icon: {
+				color:"#C8564E",
+				position:"absolute",
+				display: 'flex',
+				alignItems: 'center',
+				marginTop: '-1.5%',
+				marginLeft:"28.5%",
+				fontSize: "50px"
+		},
+		submit: {
+				color: '#ffffff',
+				fontWeight: 'bold',
+				background:'#99B27F',
+				padding: '10px 30px 10px 30px',
+				marginLeft:"20%",
+				marginTop:"1.5%",
+				borderRadius: '0',
+				"&:hover": {
+						background: '#99B27F',
+				}
+		}
 }));
+    
+
 
 
 export default function Newpost({ isAuthenticated }) {
-
     const classes = useStyles();
 
 	// have to also include UserID when signin and login feature is implemented
