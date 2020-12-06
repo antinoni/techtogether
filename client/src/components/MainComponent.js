@@ -6,6 +6,7 @@ import Profile from "./ProfileComponent";
 import NewPost from "./NewPostComponent";
 import Board from "./BoardComponent";
 import ProfileSettings from "./ProfileSettingsComponent";
+import ProfileArchive from "./ProfileArchiveComponent";
 
 function Main({ isAuthenticated, user }) {
   return (
@@ -25,7 +26,8 @@ const Routes = () => {
       <Route path="/profile" component={Profile} />
       <Route path="/newpost" component={NewPost} />
       <Route path="/profilesettings" component={ProfileSettings} />
-    	<Route path="/board" component={Board} />
+      <Route path="/profilearchive" component={ProfileArchive} />
+      <Route path="/board" component={Board} />
     </Switch>
   );
 };

@@ -14,8 +14,7 @@ import profilePic from "../assets/profilePic.png";
 import FormControl from "@material-ui/core/FormControl";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
-// import ProfileSettings from "./ProfileSettingsComponent";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,6 +49,10 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: "0 0 0 0",
     },
   },
+  linkstyle: {
+    textDecoration: "none",
+    color: "black",
+  },
 }));
 
 export default function Profile() {
@@ -77,32 +80,38 @@ export default function Profile() {
           <Grid className="nav-list" item xs={3} sm={3}>
             <h1 style={{ marginLeft: "30px" }}>User Profile</h1>
             <List component="nav" aria-label="mailbox folders">
-              <ListItem button>
-                <ListItemAvatar>
-                  <Avatar className={classes.avatar}>
-                    <PersonOutlinedIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="General" />
-              </ListItem>
+              <Link to="/profile" className={classes.linkstyle}>
+                <ListItem button>
+                  <ListItemAvatar>
+                    <Avatar className={classes.avatar}>
+                      <PersonOutlinedIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="General" />
+                </ListItem>
+              </Link>
               <Divider />
-              <ListItem button divider>
-                <ListItemAvatar>
-                  <Avatar className={classes.avatar}>
-                    <SettingsOutlinedIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="Settings" />
-              </ListItem>
-              <ListItem button>
-                <ListItemAvatar>
-                  <Avatar className={classes.avatar}>
-                    <RestoreIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="Archive" />
-              </ListItem>
-              <Divider light />
+              <Link to="/profilesettings" className={classes.linkstyle}>
+                <ListItem button divider>
+                  <ListItemAvatar>
+                    <Avatar className={classes.avatar}>
+                      <SettingsOutlinedIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="Settings" />
+                </ListItem>
+              </Link>
+              <Link to="/profilearchive" className={classes.linkstyle}>
+                <ListItem button>
+                  <ListItemAvatar>
+                    <Avatar className={classes.avatar}>
+                      <RestoreIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="Archive" />
+                </ListItem>
+                <Divider light />
+              </Link>
             </List>
           </Grid>
           <Grid className="grid-right" container sm={5}>
@@ -177,10 +186,14 @@ export default function Profile() {
         </Grid>
         <Grid container spacing={3} direction={"row"}>
           <Grid item xs={3} sm={3}>
-            <h1>Log Out</h1>
+            <Link to="/login">
+              <h1>Log Out</h1>
+            </Link>
           </Grid>
           <Grid style={{ margin: "20px" }} item xs={12} sm={6}>
-            <p>Edit Profile Information</p>
+            <Link to="/profilesettings">
+              <p>Edit Profile Information</p>
+            </Link>
           </Grid>
         </Grid>
       </div>
