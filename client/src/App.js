@@ -4,12 +4,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./components/MainComponent";
 
 import withFirebaseAuth from 'react-with-firebase-auth'
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore';
 import firebaseConfig from './firebaseConfig';
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
+export const db = firebaseApp.firestore();
+
 const firebaseAppAuth = firebaseApp.auth();
+
 const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
