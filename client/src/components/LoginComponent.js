@@ -12,72 +12,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 export default function LoginComponent({ login, isAuthenticated }) {
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            height: '100vh',
-        },
-        paper: {
-            margin: theme.spacing(8, 4),
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-        },
-        avatar: {
-            margin: theme.spacing(1),
-            backgroundColor: '#99B27F'
-        },
-        form: {
-            width: '100%', // Fix IE 11 issue.
-            marginTop: theme.spacing(1)
-        },
-        submit: {
-            margin: theme.spacing(3, 0, 2),
-            color: '#ffffff',
-            background: '#D48883',
-            border: 0,
-            color: 'white',
-            height: 48,
-            borderRadius: '0',
-            boxShadow: '0 0 0 0',
-            "&:hover": {
-                background: '#D48883',
-                boxShadow: '0 0 0 0',
-            }
-        },
-        google: {
-            margin: theme.spacing(3, 0, 2),
-            color: '#ffffff',
-            background: '#de5246 ',
-            border: 0,
-            color: 'white',
-            height: 48,
-            borderRadius: '0',
-            boxShadow: '0 0 0 0',
-            "&:hover": {
-                background: '#de5246 ',
-                boxShadow: '0 0 0 0',
-            }
-        },
-        facebook: {
-            margin: theme.spacing(3, 0, 2),
-            color: '#ffffff',
-            background: '#3b5998',
-            border: 0,
-            color: 'white',
-            height: 48,
-            borderRadius: '0',
-            boxShadow: '0 0 0 0',
-            "&:hover": {
-                background: '#3b5998',
-                boxShadow: '0 0 0 0',
-            }
-        },
-    }));
-    
-    const classes = useStyles();
 
 	return (
-		<Grid container component="main" className={classes.root}>
+		<Grid container component="main" style={{height: '100vh'}}>
 			<CssBaseline />
 			<Grid item xs={3} sm={4} md={7} position="absolute" component={Paper} elevation={0} square>
             <img 
@@ -85,14 +22,23 @@ export default function LoginComponent({ login, isAuthenticated }) {
                 src="https://media.discordapp.net/attachments/784159930029703189/784777971557859358/login.png?width=466&height=618" />
             </Grid>
 			<Grid item xs={12} sm={8} md={5} component={Paper} elevation={0} square>
-				<div className={classes.paper} style={{width:"350px", marginTop:"100px"}}>
-					<Avatar className={classes.avatar}>
+                <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        width:"350px", 
+                        marginTop:"100px"
+                    }}>
+					<Avatar style={{backgroundColor: '#99B27F'}} >
 						<LockOutlinedIcon />
 					</Avatar>
 					<Typography component="h1" variant="h5">
 						Welcome Back!
 					</Typography>
-					<form className={classes.form} noValidate>
+					<form style={{
+                        width: '100%'       
+                        }} 
+                    noValidate>
 						<TextField
                             color ="#ffffff"
 							margin="normal"
@@ -120,7 +66,19 @@ export default function LoginComponent({ login, isAuthenticated }) {
                                 type="submit" 
                                 fullWidth 
                                 variant="contained" 
-                                className={classes.submit}>
+                                style={{
+                                    marginTop:'15px',
+                                    color: '#ffffff',
+                                    background: '#D48883',
+                                    color: 'white',
+                                    height: '48px',
+                                    borderRadius: '0',
+                                    boxShadow: '0 0 0 0',
+                                    "&:hover": {
+                                        background: '#D48883',
+                                        boxShadow: '0 0 0 0',
+                                    }
+                                }}>
                                     Sign In
                                 </Button>
                             </Grid>           
@@ -129,11 +87,16 @@ export default function LoginComponent({ login, isAuthenticated }) {
                                 type="submit" 
                                 fullWidth 
                                 variant="contained" 
-                                className={classes.google}
                                 style={{
+                                    marginTop:'40px',
+                                    color: '#ffffff',
+                                    background: '#de5246 ',
+                                    color: 'white',
+                                    height: '48px',
+                                    borderRadius: '0',
                                     boxShadow: '0 0 0 0',
                                     "&:hover": {
-                                        background: 'blue',
+                                        background: '#de5246 ',
                                         boxShadow: '0 0 0 0',
                                     }
                                     }}>
@@ -145,7 +108,19 @@ export default function LoginComponent({ login, isAuthenticated }) {
                                 type="submit" 
                                 fullWidth 
                                 variant="contained"
-                                className={classes.facebook}>
+                                style={{
+                                    marginTop: '40px',
+                                    color: '#ffffff',
+                                    background: '#3b5998',
+                                    color: 'white',
+                                    height: '48px',
+                                    borderRadius: '0',
+                                    boxShadow: '0 0 0 0',
+                                    "&:hover": {
+                                        background: '#3b5998',
+                                        boxShadow: '0 0 0 0',
+                                    }
+                                }}>
                                     Sign In with Facebook
                                 </Button>
                             </Grid>

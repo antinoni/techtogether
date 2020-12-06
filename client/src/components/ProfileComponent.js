@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -17,45 +16,6 @@ import InputLabel from "@material-ui/core/InputLabel";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: "100vh",
-  },
-
-  paper: {
-    marginTop: theme.spacing(8, 4),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: "#99B27F",
-  },
-  form: {
-    width: "100%",
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-    color: "#ffffff",
-    background: "#D48883",
-    border: 0,
-    color: "white",
-    height: 48,
-    borderRadius: "0",
-    boxShadow: "0 0 0 0",
-    "&:hover": {
-      background: "#D48883",
-      boxShadow: "0 0 0 0",
-    },
-  },
-  linkstyle: {
-    textDecoration: "none",
-    color: "black",
-  },
-}));
-
 export default function Profile() {
   const [firstname, setFirstName] = React.useState("Composed TextField");
   const [lastname, setLastName] = React.useState("Composed TextField");
@@ -64,7 +24,6 @@ export default function Profile() {
   const [address, setAddress] = React.useState("Composed TextField");
   const [country, setCountry] = React.useState("Composed TextField");
 
-  const classes = useStyles();
 
   const handleChange = (event) => {
     setFirstName(event.target.value);
@@ -81,10 +40,10 @@ export default function Profile() {
           <Grid className="nav-list" item xs={3} sm={3}>
             <h1 style={{ marginLeft: "30px" }}>User Profile</h1>
             <List component="nav" aria-label="mailbox folders">
-              <Link to="/profile" className={classes.linkstyle}>
+              <Link to="/profile" style={{textDecoration: "none",color: "black"}}>
                 <ListItem button>
                   <ListItemAvatar>
-                    <Avatar className={classes.avatar}>
+                    <Avatar style={{backgroundColor: "#99B27F"}}>
                       <PersonOutlinedIcon />
                     </Avatar>
                   </ListItemAvatar>
@@ -92,20 +51,20 @@ export default function Profile() {
                 </ListItem>
               </Link>
               <Divider />
-              <Link to="/profilesettings" className={classes.linkstyle}>
+              <Link to="/profilesettings" style={{textDecoration: "none",color: "black"}}>
                 <ListItem button divider>
                   <ListItemAvatar>
-                    <Avatar className={classes.avatar}>
+                    <Avatar style={{backgroundColor: "#99B27F"}}>
                       <SettingsOutlinedIcon />
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText primary="Settings" />
                 </ListItem>
               </Link>
-              <Link to="/profilearchive" className={classes.linkstyle}>
+              <Link to="/profilearchive" style={{textDecoration: "none",color: "black"}}>
                 <ListItem button>
                   <ListItemAvatar>
-                    <Avatar className={classes.avatar}>
+                    <Avatar style={{backgroundColor: "#99B27F"}}>
                       <RestoreIcon />
                     </Avatar>
                   </ListItemAvatar>
