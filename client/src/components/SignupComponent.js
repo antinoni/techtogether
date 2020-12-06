@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-const SignupComponent = ({ register, isAuthenticated }) => {
+export default function SignupComponent ({ register, isAuthenticated }) {
 	const classes = useStyles();
  
 
@@ -142,5 +142,3 @@ const SignupComponent = ({ register, isAuthenticated }) => {
 		</Grid>
 	);
 }
-
-export default (SignupComponent);

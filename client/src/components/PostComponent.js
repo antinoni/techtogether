@@ -4,29 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { db } from "../App";
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-        height: '100vh',
-        height:"70vh",
-        marginLeft:"20%",
-        marginTop:"5%",
-        backgroundColor:"#DDC18C", 
-        width:"60%"
-    },
-    formControl: {
-        minWidth: 200,
-        paddingLeft: -10
-    },
-    icon: {
-        color:"#C8564E",
-        position:"absolute",
-        display: 'flex',
-        alignItems: 'center',
-        marginTop: '-1.5%',
-        marginLeft:"28%",
-        fontSize: "50px"
-    }
-}));
 
 class Post extends React.Component{
 	constructor(props){
