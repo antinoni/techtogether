@@ -28,32 +28,45 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-class Board extends React.Component{
+class Post extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = { boardarray: [] };
+		// GET BOARDNAME FROM PREVIOUS COMPONENT
+		this.state = { postarray: [] };
 	}
 	componentDidMount(){
 		db.collection('Boards')
+			.where('boardname', '==', 'elderly')
 			.get()
 			.then(query => {
-			console.log(query.docs);
 			const data = query.docs.map(doc => doc.data());
-			console.log(data);
-			this.setState({boardarray: data});
+			console.log(query.docs[0].id);
+				db.collection('Boards')
+					.doc(query.docs[0].id)
+					.collection('posts')
+					.get()
+					.then(querypost => {
+						const datapost = querypost.docs.map(doc => doc.data());
+						this.setState({postarray: datapost});
+					})
 		});
 	}
 
 	render(){
-		const { boardarray } = this.state;
+		const { postarray } = this.state;
 		return (
 			<div>
-			{ boardarray.map(board => (
-				<div>{board.boardname} </div>
+			<div> Currently this is hard coded to get elderly posts. Will have to figure out how to send parameter over Component and replace line 39... </div>
+			{ postarray.map(post => (
+				<div> 
+					<div>Title: { post.posttitle }</div> 
+					<div>Details: {post.postdetails} </div>
+				</div>
+
 			))}
 			</div>
 		);
 	}
 }
 
- export default Board
+ export default Post

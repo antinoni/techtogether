@@ -5,6 +5,7 @@ import Signup from "./SignupComponent";
 import Profile from "./ProfileComponent";
 import NewPost from "./NewPostComponent";
 import Board from "./BoardComponent";
+import Post from "./PostComponent";
 import ProfileSettings from "./ProfileSettingsComponent";
 import ProfileArchive from "./ProfileArchiveComponent";
 
@@ -26,8 +27,13 @@ const Routes = () => {
       <Route path="/profile" component={Profile} />
       <Route path="/newpost" component={NewPost} />
       <Route path="/profilesettings" component={ProfileSettings} />
+<<<<<<< HEAD
       <Route path="/profilearchive" component={ProfileArchive} />
       <Route path="/board" component={Board} />
+=======
+    	<Route path="/board" component={Board} />
+			<Route path="/post" component={Post} />
+>>>>>>> e0ee1af3aa810198cbb3869194028157e64aab83
     </Switch>
   );
 };
