@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import { ArrowDropDown, ArrowDropDownCircleOutlined, RadioButtonCheckedOutlined } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 
 export default function SignupComponent ({ register, isAuthenticated }) {
@@ -103,7 +95,7 @@ export default function SignupComponent ({ register, isAuthenticated }) {
                                 />
                             </Grid>
                         </Grid>
-                        <Button 
+                        <Button component={Link} to="/profile" 
                         type="submit" 
                         fullWidth 
                         variant="contained" 
@@ -126,9 +118,9 @@ export default function SignupComponent ({ register, isAuthenticated }) {
                         </Button>
                         <Grid align="center">
                             <Grid item xs={12} >
-                                <Link href="/login" variant="body2" style={{color: "black",textDecoration:"underlined"}}>
+                                <a href="/login" variant="body2" style={{color: "black",textDecoration:"underlined"}}>
                                     Already have an account? Sign in
-                                </Link>
+                                </a>
                             </Grid>
                         </Grid>
                     </form>

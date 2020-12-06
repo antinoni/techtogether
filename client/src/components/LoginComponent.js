@@ -3,12 +3,11 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 
 export default function LoginComponent({ login, isAuthenticated }) {
@@ -62,7 +61,7 @@ export default function LoginComponent({ login, isAuthenticated }) {
 						/>
                         <Grid container direction={"column"} >
                             <Grid item xs={12} style={{marginBottom:"-30px"}} >
-                                <Button 
+                                <Button  component={Link} to="/profile" 
                                 type="submit" 
                                 fullWidth 
                                 variant="contained" 
@@ -127,9 +126,9 @@ export default function LoginComponent({ login, isAuthenticated }) {
                         </Grid>
 						<Grid container>
 							<Grid item xs={12} >
-                                <Link href="/signup" variant="body2" style={{color: "black",textDecoration:"underlined"}}>
+                                <a href="/signup" variant="body2" style={{color: "black",textDecoration:"underlined"}}>
 									{"Don't have an account? Sign Up"}
-								</Link>
+								</a>
 							</Grid>
 						</Grid>
 					</form>
