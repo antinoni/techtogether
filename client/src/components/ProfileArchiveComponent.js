@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -15,47 +14,6 @@ import Grid from "@material-ui/core/Grid";
 
 export default function ProfileArchive() {
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      height: "100vh",
-    },
-  
-    paper: {
-      marginTop: theme.spacing(8, 4),
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    avatar: {
-      margin: theme.spacing(1),
-      backgroundColor: "#99B27F",
-    },
-    form: {
-      width: "100%",
-      marginTop: theme.spacing(3),
-    },
-    submit: {
-      margin: theme.spacing(3, 0, 2),
-      color: "#ffffff",
-      background: "#D48883",
-      border: 0,
-      color: "white",
-      height: 48,
-      borderRadius: "0",
-      boxShadow: "0 0 0 0",
-      "&:hover": {
-        background: "#D48883",
-        boxShadow: "0 0 0 0",
-      },
-    },
-    linkstyle: {
-      textDecoration: "none",
-      color: "black",
-    },
-  }));
-  
-
-  const classes = useStyles();
   return (
     <div>
       <div className="nav-pro">
@@ -63,10 +21,14 @@ export default function ProfileArchive() {
           <Grid className="nav-list" item xs={3} sm={3}>
             <h1 style={{ marginLeft: "30px" }}>User Profile</h1>
             <List component="nav">
-              <Link to="/profile" className={classes.linkstyle}>
+              <Link to="/profile" 
+                style={{
+                textDecoration: "none",
+                color: "black",
+              }}>
                 <ListItem button>
                   <ListItemAvatar>
-                    <Avatar className={classes.avatar}>
+                    <Avatar style={{backgroundColor: "#99B27F"}}>
                       <PersonOutlinedIcon />
                     </Avatar>
                   </ListItemAvatar>
@@ -74,20 +36,24 @@ export default function ProfileArchive() {
                 </ListItem>
               </Link>
               <Divider />
-              <Link to="/profilesettings" className={classes.linkstyle}>
+              <Link to="/profilesettings" style={{backgroundColor: "#99B27F"}}>
                 <ListItem button divider>
                   <ListItemAvatar>
-                    <Avatar className={classes.avatar}>
+                    <Avatar  style={{backgroundColor: "#99B27F"}}>
                       <SettingsOutlinedIcon />
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText primary="Settings" />
                 </ListItem>
               </Link>
-              <Link to="/profilearchive" className={classes.linkstyle}>
+              <Link to="/profilearchive"
+              style={{
+                textDecoration: "none",
+                color: "black",
+              }}>
                 <ListItem button>
                   <ListItemAvatar>
-                    <Avatar className={classes.avatar}>
+                    <Avatar style={{backgroundColor: "#99B27F"}}>
                       <RestoreIcon />
                     </Avatar>
                   </ListItemAvatar>
