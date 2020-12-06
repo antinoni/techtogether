@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { Link } from 'react-router-dom';
 import { db } from "../App";
 
 
@@ -28,12 +28,10 @@ class Board extends React.Component{
 			{ boardarray.map(board => (
 				<div style={{color: 'green'}}>
 				
-					{board.boardname} 
+					<Link to={ '/post/' + `${board.boardname}`  } > {board.boardname} </Link> 
 					<img src={board.imagepath} height="50px;" />
 				</div>
 			))}
-
-			<img src="../assets/tab1.png" height="50px;" />
 			</div>
 		);
 	}

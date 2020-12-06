@@ -30,7 +30,7 @@ const Routes = () => {
       <Route path="/profilearchive" component={ProfileArchive} />
       <Route path="/profilesettings" component={ProfileSettings} />
       <Route path="/board" component={Board} />
-			<Route path="/post" component={Post} />
+			<Route path="/post/:board" component={Post} />
       <Route exact path="/" component={Home} />
     </Switch>
   );
