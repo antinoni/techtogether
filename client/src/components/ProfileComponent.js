@@ -15,6 +15,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -191,9 +192,9 @@ export default function Profile() {
             </Link>
           </Grid>
           <Grid style={{ margin: "20px" }} item xs={12} sm={6}>
-            <Link to="/profilesettings">
+            <Button>
               <p>Edit Profile Information</p>
-            </Link>
+            </Button>
           </Grid>
         </Grid>
       </div>

@@ -116,45 +116,6 @@ export default function ProfileSettings() {
           </Grid>
           <Grid className="grid-right" container sm={5}>
             <Grid style={{ margin: "10px" }} item xs={12}>
-              <h1> Change Profile Information</h1>
-              <FormControl style={{ margin: "10px" }} variant="filled">
-                <InputLabel htmlFor="component-filled">First Name</InputLabel>
-                <FilledInput
-                  id="component-filled"
-                  value={firstname}
-                  onChange={handleChange}
-                  label="firstName"
-                />
-              </FormControl>
-              <FormControl style={{ margin: "10px" }} variant="filled">
-                <InputLabel htmlFor="component-filled">Last Name</InputLabel>
-                <FilledInput
-                  id="component-filled"
-                  value={lastname}
-                  onChange={handleChange}
-                  label="lastname"
-                />
-              </FormControl>
-              <FormControl style={{ margin: "10px" }} variant="filled">
-                <InputLabel htmlFor="component-filled">Address</InputLabel>
-                <FilledInput
-                  id="component-filled"
-                  value={address}
-                  onChange={handleChange}
-                  label="address"
-                />
-              </FormControl>
-              <FormControl style={{ margin: "10px" }} variant="filled">
-                <InputLabel htmlFor="component-filled">Country</InputLabel>
-                <FilledInput
-                  id="component-filled"
-                  value={country}
-                  onChange={handleChange}
-                  label="country"
-                />
-              </FormControl>
-            </Grid>
-            <Grid style={{ margin: "10px" }} item xs={12}>
               <h1> Change Username</h1>
               <FormControl style={{ margin: "10px" }} variant="filled">
                 <InputLabel htmlFor="component-filled">New Username</InputLabel>
