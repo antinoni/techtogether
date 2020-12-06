@@ -11,11 +11,15 @@ import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import RestoreIcon from "@material-ui/icons/Restore";
 import Grid from "@material-ui/core/Grid";
 import profilePic from "../assets/profilePic.png";
+import FormControl from "@material-ui/core/FormControl";
+import Input from "@material-ui/core/Input";
+import InputLabel from "@material-ui/core/InputLabel";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
   },
+
   paper: {
     marginTop: theme.spacing(8, 4),
     display: "flex",
@@ -46,8 +50,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Profile() {
+export default function Profile() {
+  const [firstname, setFirstName] = React.useState("Composed TextField");
+  const [lastname, setLastName] = React.useState("Composed TextField");
+  const [email, setEmail] = React.useState("Composed TextField");
+  const [number, setNumber] = React.useState("Composed TextField");
+  const [address, setAddress] = React.useState("Composed TextField");
+  const [country, setCountry] = React.useState("Composed TextField");
+
   const classes = useStyles();
+
+  const handleChange = (event) => {
+    setFirstName(event.target.value);
+    setLastName(event.target.value);
+    setEmail(event.target.value);
+    setNumber(event.target.value);
+    setAddress(event.target.value);
+    setCountry(event.target.value);
+  };
   return (
     <div>
       <div className="nav-pro">
@@ -97,11 +117,71 @@ function Profile() {
               <p>@username</p>
               <p>General area, Country</p>
             </Grid>
+            <Grid item xs={6} sm={5}>
+              <FormControl style={{ margin: "10px" }} disabled>
+                <InputLabel htmlFor="component-disabled">First Name</InputLabel>
+                <Input
+                  id="component-disabled"
+                  value={firstname}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl style={{ margin: "10px" }} disabled>
+                <InputLabel htmlFor="component-disabled">Email</InputLabel>
+                <Input
+                  id="component-disabled"
+                  value={email}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl style={{ margin: "10px" }} disabled>
+                <InputLabel htmlFor="component-disabled">Address</InputLabel>
+                <Input
+                  id="component-disabled"
+                  value={address}
+                  onChange={handleChange}
+                />
+              </FormControl>
+            </Grid>
+            <Grid item xs={6} sm={5}>
+              <FormControl style={{ margin: "10px" }} disabled>
+                <InputLabel htmlFor="component-disabled">Last Name</InputLabel>
+                <Input
+                  id="component-disabled"
+                  value={lastname}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl style={{ margin: "10px" }} disabled>
+                <InputLabel htmlFor="component-disabled">
+                  Phone Number
+                </InputLabel>
+                <Input
+                  id="component-disabled"
+                  value={number}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl style={{ margin: "10px" }} disabled>
+                <InputLabel htmlFor="component-disabled">Country</InputLabel>
+                <Input
+                  id="component-disabled"
+                  value={country}
+                  onChange={handleChange}
+                />
+              </FormControl>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid container spacing={3} direction={"row"}>
+          <Grid item xs={3} sm={3}>
+            <h1>Log Out</h1>
+          </Grid>
+          <Grid style={{ margin: "20px" }} item xs={12} sm={6}>
+            <p>Edit Profile Information</p>
           </Grid>
         </Grid>
       </div>
     </div>
   );
 }
-
-export default Profile;
