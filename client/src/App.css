@@ -13,8 +13,6 @@
   }
 }
 
-
-
 .App-link {
   color: #61dafb;
 }
@@ -28,30 +26,31 @@
   }
 }
 
-
 /*-----Footer-----*/
 
 .site-footer {
   width: 100vw;
-  font-family: 'Calibri', sans-serif;
+  font-family: "Calibri", sans-serif;
   font-size: 14px;
-  color: #202020; 
+  color: #202020;
   padding: 20px;
-  background-color: #EEEDBE;
-  bottom:0;
-  position:fixed;
+  background-color: #eeedbe;
+  bottom: 0;
+  position: fixed;
 }
 
-  .site-footer a {
-    color: #202020;
-    text-decoration: none; }
+.site-footer a {
+  color: #202020;
+  text-decoration: none;
+}
 
-    .site-footer a:hover, .site-footer a:active {
-      color: #768696; }
+.site-footer a:hover,
+.site-footer a:active {
+  color: #768696;
+}
 
 .site-footer-inner {
   position: relative;
   padding-top: 40px;
-  padding-bottom: 40px; }
-
-  
+  padding-bottom: 40px;
+}
