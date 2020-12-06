@@ -25,19 +25,12 @@ const Routes = () => {
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/profile" component={Profile} />
-      <Route path="/newpost" component={NewPost} />
-<<<<<<< HEAD
-=======
+      <Route path="/new" component={NewPost} />
       <Route path="/profilesettings" component={ProfileSettings} />
->>>>>>> d40614887ddadd0da2996abd98da9037bd3bb7f6
       <Route path="/profilearchive" component={ProfileArchive} />
       <Route path="/profilesettings" component={ProfileSettings} />
       <Route path="/board" component={Board} />
-<<<<<<< HEAD
-      <Route path="/post" component={Post} />
-=======
 			<Route path="/post" component={Post} />
->>>>>>> d40614887ddadd0da2996abd98da9037bd3bb7f6
     </Switch>
   );
 };

@@ -75,13 +75,6 @@ const useStyles = makeStyles((theme) => ({
 
 const LoginComponent = ({ login, isAuthenticated }) => {
 	const classes = useStyles();
-	const [ data, setData ] = useState(null);
-	function handleSubmit(e) {
-		e.preventDefault();
-
-    const { email, password } = data;
-    login(email, password);
-	}
 
 	return (
 		<Grid container component="main" className={classes.root}>
@@ -99,7 +92,7 @@ const LoginComponent = ({ login, isAuthenticated }) => {
 					<Typography component="h1" variant="h5">
 						Welcome Back!
 					</Typography>
-					<form className={classes.form} onSubmit={handleSubmit} noValidate>
+					<form className={classes.form} noValidate>
 						<TextField
                             color ="#ffffff"
 							margin="normal"
@@ -110,12 +103,6 @@ const LoginComponent = ({ login, isAuthenticated }) => {
 							name="email"
 							autoComplete="email"
 							autoFocus
-							onChange={(e) => {
-								setData({
-									...data,
-									email: e.target.value
-								});
-							}}
 						/>
 						<TextField
 							margin="normal"
@@ -126,12 +113,6 @@ const LoginComponent = ({ login, isAuthenticated }) => {
 							type="password"
 							id="password"
 							autoComplete="current-password"
-							onChange={(e) => {
-								setData({
-									...data,
-									password: e.target.value
-								});
-							}}
 						/>
                         <Grid container direction={"column"} >
                             <Grid item xs={12} style={{marginBottom:"-30px"}} >
