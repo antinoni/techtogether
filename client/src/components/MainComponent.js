@@ -26,12 +26,11 @@ const Routes = () => {
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/profile" component={Profile} />
-      <Route path="/new" component={NewPost} />
-      <Route path="/profilesettings" component={ProfileSettings} />
+      <Route path="/newpost" component={NewPost} />
       <Route path="/profilearchive" component={ProfileArchive} />
       <Route path="/profilesettings" component={ProfileSettings} />
       <Route path="/board" component={Board} />
-			<Route path="/post" component={Post} />
+			<Route path="/post/:board" component={Post} />
       <Route exact path="/" component={Home} />
     </Switch>
   );

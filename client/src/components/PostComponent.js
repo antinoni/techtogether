@@ -11,8 +11,9 @@ class Post extends React.Component{
 		this.state = { postarray: [] };
 	}
 	componentDidMount(){
+		console.log(this.props.match.params.board);
 		db.collection('Boards')
-			.where('boardname', '==', 'elderly')
+			.where('boardname', '==', this.props.match.params.board)
 			.get()
 			.then(query => {
 			const data = query.docs.map(doc => doc.data());

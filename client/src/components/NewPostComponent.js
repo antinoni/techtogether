@@ -11,9 +11,6 @@ import Select from '@material-ui/core/Select';
 
 import { db } from "../App";
 
-
-
-
 export default function Newpost({ isAuthenticated }) {
 
 	// have to also include UserID when signin and login feature is implemented
