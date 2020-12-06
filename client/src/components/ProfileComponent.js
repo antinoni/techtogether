@@ -37,7 +37,7 @@ export default function Profile() {
     <div>
       <div className="nav-pro">
         <Grid container spacing={3} direction={"row"}>
-          <Grid className="nav-list" item xs={3} sm={3}>
+          <Grid className="nav-list" item xs={3} sm={3} style={{marginTop:'12px',backgroundColor:'#FCF7DB'}}>
             <h1 style={{ marginLeft: "30px" }}>User Profile</h1>
             <List component="nav" aria-label="mailbox folders">
               <Link to="/profile" style={{textDecoration: "none",color: "black"}}>
@@ -73,6 +73,11 @@ export default function Profile() {
                 <Divider light />
               </Link>
             </List>
+            <Grid item xs={3} sm={3}>
+            <Link to="/login">
+              <h1>Log Out</h1>
+            </Link>
+            </Grid>
           </Grid>
           <Grid className="grid-right" container sm={5}>
             <Grid item xs={6} sm={5}>
@@ -82,11 +87,10 @@ export default function Profile() {
                 alt="profile picture"
               />
             </Grid>
-
-            <Grid item xs={6} sm={5}>
+            <Grid item style={{textAlign:'Left',marginLeft:'20px',marginTop:'50px'}}>
               <h1>FirstName LastName</h1>
-              <p>@username</p>
-              <p>General area, Country</p>
+              <p><i>@username</i></p>
+              <p><i>General area, Country</i></p>
             </Grid>
             <Grid item xs={6} sm={5}>
               <FormControl style={{ margin: "10px" }} disabled>
@@ -142,18 +146,13 @@ export default function Profile() {
                 />
               </FormControl>
             </Grid>
-          </Grid>
-        </Grid>
-        <Grid container spacing={3} direction={"row"}>
-          <Grid item xs={3} sm={3}>
-            <Link to="/login">
-              <h1>Log Out</h1>
-            </Link>
-          </Grid>
-          <Grid style={{ margin: "20px" }} item xs={12} sm={6}>
-            <Button>
-              <p>Edit Profile Information</p>
-            </Button>
+            <Grid container spacing={3} direction={"row"}>
+              <Grid style={{ margin: "20px" }} item xs={12} sm={6}>
+                <Button>
+                  <p>Edit Profile Information</p>
+                </Button>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </div>
