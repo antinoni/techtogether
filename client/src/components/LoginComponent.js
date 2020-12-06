@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const LoginComponent = ({ login, isAuthenticated }) => {
+export default function LoginComponent({ login, isAuthenticated }) {
 	const classes = useStyles();
 
 	return (
@@ -163,5 +163,3 @@ const LoginComponent = ({ login, isAuthenticated }) => {
 		</Grid>
 	);
 }
-
-export default (LoginComponent);

@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const Newpost = ({ isAuthenticated }) => {
+export default function Newpost({ isAuthenticated }) {
 
     const classes = useStyles();
 
@@ -151,6 +151,3 @@ const Newpost = ({ isAuthenticated }) => {
     );
 
 };
-    
-
-  export default Newpost
