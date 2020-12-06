@@ -19,46 +19,9 @@ import { ArrowDropDown, ArrowDropDownCircleOutlined, RadioButtonCheckedOutlined 
 
 
 export default function SignupComponent ({ register, isAuthenticated }) {
-    
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            height: '100vh',
-        },
-        paper: {
-            marginTop: theme.spacing(8, 4),
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-        },
-        avatar: {
-            margin: theme.spacing(1),
-            backgroundColor: '#99B27F'
-        },
-        form: {
-            width: '100%',
-            marginTop: theme.spacing(3)
-        },
-        submit: {
-            margin: theme.spacing(3, 0, 2),
-            color: '#ffffff',
-            background: '#D48883',
-            border: 0,
-            color: 'white',
-            height: 48,
-            borderRadius: '0',
-            boxShadow: '0 0 0 0',
-            "&:hover": {
-                background: '#D48883',
-                boxShadow: '0 0 0 0',
-            }
-        }
-    }));
-    
-    const classes = useStyles();
- 
 
 	return (
-		<Grid container component="main" className={classes.root}>
+		<Grid container component="main" style={{height: '100vh',}}>
 			<CssBaseline />
             <Grid item xs={3} sm={4} md={7} position="absolute" component={Paper} elevation={0} square>
             <img 
@@ -66,14 +29,26 @@ export default function SignupComponent ({ register, isAuthenticated }) {
                 src="https://cdn.discordapp.com/attachments/784159930029703189/784777973924364368/signup.png" />
             </Grid>
             <Grid item xs={12} sm={8} md={5} component={Paper} elevation={0} square>
-                <div className={classes.paper} style={{width:"350px", marginTop:"100px"}}>
-                    <Avatar className={classes.avatar}>
+                <div style={{
+                    width:"350px", 
+                    marginTop:"100px",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                    }}>
+                    <Avatar style={{
+                        backgroundColor: '#99B27F'
+                    }}>
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
                         Create an account
                     </Typography>
-                    <form className={classes.form} noValidate>
+                    <form 
+                     style={{
+                        width: '100%',
+                     }}
+                     noValidate>
                         <Grid container spacing={2}>
                             <Grid item sm={6}>
                                 <TextField
@@ -128,7 +103,25 @@ export default function SignupComponent ({ register, isAuthenticated }) {
                                 />
                             </Grid>
                         </Grid>
-                        <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+                        <Button 
+                        type="submit" 
+                        fullWidth 
+                        variant="contained" 
+                        color="primary" 
+                        style={{
+                            marginTop: '35px',
+                            color: '#ffffff',
+                            background: '#D48883',
+                            border: 0,
+                            color: 'white',
+                            height: 48,
+                            borderRadius: '0',
+                            boxShadow: '0 0 0 0',
+                            "&:hover": {
+                                background: '#D48883',
+                                boxShadow: '0 0 0 0',
+                            }
+                        }}>
                             Sign Up
                         </Button>
                         <Grid align="center">
