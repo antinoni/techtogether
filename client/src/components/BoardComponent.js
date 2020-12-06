@@ -26,8 +26,14 @@ class Board extends React.Component{
 		return (
 			<div>
 			{ boardarray.map(board => (
-				<div>{board.boardname} </div>
+				<div style={{color: 'green'}}>
+				
+					{board.boardname} 
+					<img src={board.imagepath} height="50px;" />
+				</div>
 			))}
+
+			<img src="../assets/tab1.png" height="50px;" />
 			</div>
 		);
 	}

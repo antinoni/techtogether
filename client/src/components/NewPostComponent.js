@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import LensIcon from '@material-ui/icons/Lens';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -12,48 +11,7 @@ import Select from '@material-ui/core/Select';
 
 import { db } from "../App";
 
-const useStyles = makeStyles((theme) => ({
-		root: {
-				height: '100vh',
-				height:"65vh",
-				marginLeft:"20%",
-				marginTop:"5%",
-				backgroundColor:"#DDC18C", 
-				width:"60%",
-				marginBottom: '5%'
-		},
-		formControl: {
-				minWidth: 200,
-				paddingLeft: -10
-		},
-		icon: {
-				color:"#C8564E",
-				position:"absolute",
-				display: 'flex',
-				alignItems: 'center',
-				marginTop: '-1.5%',
-				marginLeft:"28.5%",
-				fontSize: "50px"
-		},
-		submit: {
-				color: '#ffffff',
-				fontWeight: 'bold',
-				background:'#99B27F',
-				padding: '10px 30px 10px 30px',
-				marginLeft:"20%",
-				marginTop:"1.5%",
-				borderRadius: '0',
-				"&:hover": {
-						background: '#99B27F',
-				}
-		}
-}));
-    
-
-
-
 export default function Newpost({ isAuthenticated }) {
-    const classes = useStyles();
 
 	// have to also include UserID when signin and login feature is implemented
 	// board is the value from MenuItem (I changed the values below)
@@ -81,8 +39,28 @@ export default function Newpost({ isAuthenticated }) {
     
     
     return (
-        <Grid container component="main" className={classes.root}>
-            <center><LensIcon className={classes.icon} /></center>
+        <Grid container 
+        component="main" 
+        style={{
+            height: '100vh',
+            height:"65vh",
+            marginLeft:"20%",
+            marginTop:"5%",
+            backgroundColor:"#DDC18C", 
+            width:"60%",
+            marginBottom: '5%'
+        }}>
+            <center><LensIcon
+                     style={{
+                        color:"#C8564E",
+                        position:"absolute",
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginTop: '-1.5%',
+                        marginLeft:"28.5%",
+                        fontSize: "50px"
+                        }} />
+                        </center>
             <Grid cointainer>
                 <Grid item style={{marginLeft:"170px",marginTop:"25px",fontSize:"30px", fontWeight:"bold",color:"white"}}>
                     <center>Post a new help request</center>
@@ -102,7 +80,12 @@ export default function Newpost({ isAuthenticated }) {
                             />
                         </Grid>
                         <Grid item>
-                            <FormControl required className={classes.formControl}>
+                            <FormControl 
+                            required 
+                            style={{
+                                minWidth: 200,
+                                paddingLeft: -10
+                            }}>
                                 <InputLabel style={{marginTop:"-3px",marginLeft:"45px", zIndex:"15"}}>Tag</InputLabel>
                                 <Select
                                 variant="outlined"
@@ -131,7 +114,10 @@ export default function Newpost({ isAuthenticated }) {
                                     fullWidth
                                     multiline
                                     rows={11}
-                                    style={{marginLeft:"20px",backgroundColor: "#fafafa"}}
+                                    style={{
+                                        marginLeft:"20px",
+                                        backgroundColor: "#fafafa"
+                                    }}
                                     placeholder="Explain your request here. Remember, never reveal any personal information you don't want strangers to have!"
                                     variant="outlined"
                                 />
@@ -140,7 +126,18 @@ export default function Newpost({ isAuthenticated }) {
                 </Grid>
                 <Button 
                 variant="contained" 
-                className={classes.submit}
+                style={{        
+                    color: '#ffffff',
+                    fontWeight: 'bold',
+                    background:'#99B27F',
+                    padding: '10px 30px 10px 30px',
+                    marginLeft:"20%",
+                    marginTop:"1.5%",
+                    borderRadius: '0',
+                    "&:hover": {
+                        background: '#99B27F',
+                    }
+                }}
                 disableElevation
                 onChange={addPostToDatabase}  
                 >
